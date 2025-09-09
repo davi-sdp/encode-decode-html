@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codificador e Decodificador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            word-wrap: break-word;
+        }
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .option-group {
+            margin-bottom: 10px;
+        }
+        .option-label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Codificador e Decodificador de Texto</h1>
+        
+        <div class="form-group">
+            <label for="inputText">Texto de Entrada:</label>
+            <textarea id="inputText" placeholder="Digite seu texto aqui..."></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="encodingType">Tipo de Codificação:</label>
+            <select id="encodingType">
+                <option value="caesar">Cifra de César</option>
+                <option value="atbash">Atbash</option>
+                <option value="base64">Base64</option>
+                <option value="rot13">ROT13</option>
+                <option value="binary">Binário (ASCII)</option>
+                <option value="hex">Hexadecimal</option>
+                <option value="url">URL Encode/Decode</option>
+                <option value="morse">Código Morse</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="caesarShiftGroup">
+            <label for="caesarShift">Deslocamento da Cifra de César:</label>
+            <input type="number" id="caesarShift" value="3" min="1" max="25">
+        </div>
+        
+        <div class="form-group">
+            <label for="charsetType">Conjunto de Caracteres:</label>
+            <select id="charsetType">
+                <option value="ascii">ASCII</option>
+                <option value="utf8">UTF-8</option>
+                <option value="win1252">Windows-1252</option>
+                <option value="iso88591">ISO-8859-1</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <div class="options">
+                <button id="encodeBtn">Codificar</button>
+                <button id="decodeBtn">Decodificar</button>
+            </div>
+        </div>
+        
+        <div class="result" id="outputResult">
+            O resultado aparecerá aqui...
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
